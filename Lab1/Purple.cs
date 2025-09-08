@@ -87,11 +87,11 @@ namespace Lab1
             bool answer = false;
 
             // code here
-            double circle_radius_inkvadr = circleS / double.Pi;
-            if (4 * circle_radius_inkvadr >= 2 * squareS)
-            {
+            double circle_radius = Math.Sqrt(circleS / Math.PI);
+            double square_side = Math.Sqrt(squareS);
+            double square_diagonal = square_side * Math.Sqrt(2);
+            if (square_diagonal / 2 <= circle_radius)
                 answer = true;
-            }
             // end
 
             return answer;
@@ -148,9 +148,9 @@ namespace Lab1
             const int bank = 10000;
 
             // code here
-            if (year % 4 == 0)
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
             {
-                answer = false;
+                return false; ;
             }
             int auroras = 0;
             if (pupils / 7 == 0)
@@ -161,10 +161,8 @@ namespace Lab1
             {
                 auroras = pupils / 7 + 1;
             }
-            if ((bank - (pupils * 5) - (auroras * salary) >= 0) && (year % 4 != 0))
-            {
+            if (bank > (pupils * 5 + auroras * salary))
                 answer = true;
-            }
                 // end
 
                 return answer;
