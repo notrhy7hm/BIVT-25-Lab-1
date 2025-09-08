@@ -1,4 +1,6 @@
-﻿namespace Lab1
+﻿using System.Reflection.Metadata;
+
+namespace Lab1
 {
     public class Purple
     {
@@ -7,17 +9,30 @@
             bool answer = false;
 
             // code here
+            if (a == b && b == c && c == 0)  {
+                answer = true;
+            }
+            else if (a > 0 && b > 0 && c > 0)
+            {
+                answer = true;
+            }
+            if (a < 0 && b < 0 && c < 0)
+            {
+                answer = true;
+            }
+                // end
 
-            // end
-
-            return answer;
+                return answer;
         }
         public bool Task2(int a, int b)
         {
             bool answer = false;
 
             // code here
-
+            if (a % b == 0 || b % a == 0)
+            {
+                answer = true;
+            }
             // end
 
             return answer;
@@ -27,6 +42,10 @@
             bool answer = false;
 
             // code here
+            if (a*a == b || b*b == a || a*a*a == b || b*b*b == a)
+            {
+                answer = true;
+            }
 
             // end
 
@@ -37,7 +56,7 @@
             double answer = 0;
 
             // code here
-
+            answer = f * f - 4 * d * g;
             // end
 
             return answer;
@@ -47,7 +66,18 @@
             double answer = 0;
 
             // code here
-
+            if (x <= -1)
+            {
+                answer = 1;
+            }
+            if (x > -1 && x <= 1)
+            {
+                answer = -1 * x;
+            }
+            if (x > 1)
+            {
+                answer = -1;
+            }
             // end
 
             return answer;
@@ -57,7 +87,11 @@
             bool answer = false;
 
             // code here
-
+            double circle_radius_inkvadr = circleS / double.Pi;
+            if (4 * circle_radius_inkvadr >= 2 * squareS)
+            {
+                answer = true;
+            }
             // end
 
             return answer;
@@ -68,10 +102,45 @@
             int answer = 0;
 
             // code here
+            if (s == true)
+            {
+                if (t == true)
+                {
+                    answer = 6;
+                }
+                else
+                {
+                    if (f == true)
+                    {
+                        answer = 10;
+                    }
+                    else
+                    {
+                        answer = 2;
+                    }
+                }
+            }
+            else
+            {
+                if (t == true)
+                {
+                    answer = 3;
+                }
+                else
+                {
+                    if (f == true)
+                    {
+                        answer = 5;
+                    }
+                    else
+                    {
+                        answer = 1;
+                    }
+                }
+            }
+                // end
 
-            // end
-
-            return answer;
+                return answer;
         }
         public bool Task8(int year, int pupils, int salary)
         {
@@ -79,10 +148,26 @@
             const int bank = 10000;
 
             // code here
-            
-            // end
+            if (year % 4 == 0)
+            {
+                answer = false;
+            }
+            int auroras = 0;
+            if (pupils / 7 == 0)
+            {
+                auroras = pupils / 7;
+            }
+            else
+            {
+                auroras = pupils / 7 + 1;
+            }
+            if ((bank - (pupils * 5) - (auroras * salary) >= 0) && (year % 4 != 0))
+            {
+                answer = true;
+            }
+                // end
 
-            return answer;
+                return answer;
         }
     }
 }
