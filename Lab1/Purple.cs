@@ -29,7 +29,7 @@ namespace Lab1
             bool answer = false;
 
             // code here
-            if (a % b == 0 || b % a == 0)
+            if (b != 0 && a % b == 0 || a != 0 && b % a == 0)
             {
                 answer = true;
             }
@@ -68,15 +68,15 @@ namespace Lab1
             // code here
             if (x <= -1)
             {
-                answer = 1;
+                return 1;
             }
             if (x > -1 && x <= 1)
             {
-                answer = -1 * x;
+                return -x;
             }
             if (x > 1)
             {
-                answer = -1;
+                return -1;
             }
             // end
 
